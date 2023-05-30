@@ -5,10 +5,10 @@ from twilio.rest import Client
 import datetime
 
 # Initialize Twilio client
-account_sid = "ACf73c6515b5cc4386850bce43258802a0"
-auth_token = "a625687e474c62dfd6364711817993f3"
-from_number = "+13158093226"
-to_numbers = ["+916304322533", "+919491592005"]
+account_sid = "Your-SID"
+auth_token = "Your-Token"
+from_number = "Provided-from-number"
+to_numbers = ["num-1", "num-2"]
 client = Client(account_sid, auth_token)
 
 # Initialize GUI
@@ -27,7 +27,7 @@ button = tk.Button(root, text='Select File', command=select_file)
 button.pack(pady=10)
 
 def motion_detection(file_path):
-    cascPath = "D:\\Mini Project\\Coding\\harcascade\\haarcascade_frontalface_default.xml"
+    cascPath = "Path-of-haarcascade_frontalface_default.xml"
     faceCascade = cv2.CascadeClassifier(cascPath)
     cap = cv2.VideoCapture(file_path)
 
@@ -53,7 +53,7 @@ def motion_detection(file_path):
         for (x, y, w, h) in people:
             cv2.rectangle(frame, (x, y), (x+w, y+h), (0, 255, 0), 2)
             screenshot_name = f'screenshot_{frame_count}.png'
-            image_path = 'D:\\Mini Project\\Coding\\Recordings\\Recorded' + screenshot_name
+            image_path = 'Path-to-save-the-screenshot' + screenshot_name
             cv2.imwrite(image_path, frame)
             # Send SMS notification
             message = client.messages.create(

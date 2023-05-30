@@ -4,13 +4,13 @@ import datetime
 import time
 from twilio.rest import Client
 #Twilio Account Details
-account_sid = "ACf73c6515b5cc4386850bce43258802a0"
-auth_token = "a625687e474c62dfd6364711817993f3"
-from_number = "+13158093226"
-to_numbers = ["+916304322533", "+919491592005"]
+account_sid = "Your-SID"
+auth_token = "Your-Token"
+from_number = "Provided-from-number"
+to_numbers = ["num-1", "num-2"]
 client = Client(account_sid, auth_token)
 
-path = "D:\\Mini Project\\Coding\\harcascade\\haarcascade_upperbody.xml"
+path = "Path-of-haarcascade_upperbody.xml"
 cascade = cv2.CascadeClassifier(path)
 
 cap = cv2.VideoCapture(0)
@@ -22,7 +22,7 @@ interval = 2
 screenshot_num = 1
 
 fourcc = cv2.VideoWriter_fourcc(*'XVID')
-video_name = f"D:\\Mini Project\\Coding\\Recordings\\Real Time\\Videos\\video_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.mp4v"
+video_name = f"Path-to-save-the-video_{datetime.datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}.mp4v"
 out = cv2.VideoWriter(video_name, fourcc, 10.0, (640, 480))
 
 start_time = time.time()
@@ -47,7 +47,7 @@ while time.time() < end_time:
         screenshot = pyautogui.screenshot()
         now = datetime.datetime.now()
         timestamp = now.strftime('%Y-%m-%d_%H-%M-%S')
-        image_path = f'D:\\Mini Project\\coding\\Recordings\\Real Time\\Screenshots\\screenshot_{timestamp}.png'
+        image_path = f'Path-to-save-the-screenshot_{timestamp}.png'
         screenshot.save(image_path)
         screenshot_num += 1
         print(f'Screenshot {screenshot_num-1} taken')
