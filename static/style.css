@@ -1,0 +1,43 @@
+.background-image {
+  background-image: url('background.png');
+  background-size: cover;
+  height: 100vh;
+  width: 100%;
+}
+
+.center-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.start-tracking-btn {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 20px;
+  cursor: pointer;
+}
+
+.about-container {
+  background-color: #f2f2f2;
+  padding: 50px;
+  margin-top: 50px;
+}
+
+.contact-container {
+  background-color: #f2f2f2;
+  padding: 50px;
+  margin-top: 50px;
+}
+
+.contact-container a {
+  color: #4CAF50;
+}
